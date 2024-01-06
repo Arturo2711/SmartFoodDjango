@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from django.shortcuts import render
 from . import forms
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
+from . import forms
 # Create your views here.
+# Just remember, a view is essentially for return a HTTP response
 
 
 def user_login(request):
@@ -26,3 +29,8 @@ def user_login(request):
     else:
         form = forms.LoginForm()
     return render(request, 'account/login.html', {'form': form})
+
+
+def register_done(request):
+    return render(request, 'account/register_done.html')
+
