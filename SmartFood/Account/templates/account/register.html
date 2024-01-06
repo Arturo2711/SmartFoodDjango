@@ -10,11 +10,8 @@
       <h2 class="form-title" id="signup"><span></span>Sign Up</h2>
       <form method="post" class="form-group">
         {{ user_form.as_p }} {% csrf_token %}
-      </form>
-      <form method="post" class="form-group">
-        {{ profile_form.as_p }} {% csrf_token %}
         <p>
-          <input type="submit" value="Sign Up" class="btn btn-primary" />
+          <input type="submit" value="Log in" class="btn btn-primary" />
         </p>
       </form>
     </div>
