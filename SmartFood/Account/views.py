@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.shortcuts import render
 from . import forms
 from django.contrib.auth import authenticate, login
@@ -21,7 +21,7 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return render(request, 'account/logged_in.html')
+                    return redirect('recetario')
                 else:
                     return HttpResponse('Disabled account')
         else:
