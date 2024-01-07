@@ -3,8 +3,8 @@ from .models import CustomUser
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=20)
-    password = forms.CharField(widget=forms.PasswordInput)
+    Nombre = forms.CharField(max_length=20)
+    Contrasena = forms.CharField(widget=forms.PasswordInput)
 
 
 class UserRegistrationForm(forms.ModelForm):
