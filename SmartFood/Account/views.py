@@ -16,8 +16,8 @@ def user_login(request):
             cd = form.cleaned_data
             # Autenticamos el usuario en los usuarios en la base de datos
             user = authenticate(request,
-                                username=cd['username'],
-                                password=cd['password'])
+                                username=cd['Nombre'],
+                                password=cd['Contrasena'])
             if user is not None:
                 if user.is_active:
                     login(request, user)
