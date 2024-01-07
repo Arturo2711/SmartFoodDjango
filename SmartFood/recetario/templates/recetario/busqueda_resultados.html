@@ -9,6 +9,7 @@
     <table class="styled-table">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Nombre del Alimento</th>
                 <th>Código Mex2</th>
                 <th>Energía (kcal)</th>
@@ -21,6 +22,7 @@
         <tbody>
             {% for alimento in resultados %}
                 <tr>
+                    <td>{{ alimento.id }}</td>
                     <td>{{ alimento.nombre_del_alimento }}</td>
                     <td>{{ alimento.codigomex2 }}</td>
                     <td>{{ alimento.energ_kcal }}</td>
