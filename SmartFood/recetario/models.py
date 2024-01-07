@@ -78,4 +78,4 @@ class Alimento2(models.Model):
     objects = models.Manager()
 
     def __str__(self):
-        return self.nombre_del_alimento
+        return self.id
