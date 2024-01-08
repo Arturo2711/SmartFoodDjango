@@ -49,29 +49,22 @@
           >
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="top-navbar-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="{% url 'index' %}"
-                ><i class="fa fa-home"></i><br />Inicio</a
-              >
-            </li>
-            <li>
-              <a href="{% url 'services' %}"
-                ><i class="fa fa-tasks"></i><br />Servicios</a
-              >
-            </li>
-            <li>
-              <a href="{% url 'login' %}"
-                ><i class="fa fa-user"></i><br />Inicia sesión</a
-              >
-            </li>
-            <li>
-              <a href="{% url 'contact' %}"
-                ><i class="fa fa-envelope"></i><br />Contacto</a
-              >
-            </li>
-          </ul>
+            <div class="collapse navbar-collapse" id="top-navbar-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{% url 'index' %}"><i class="fa fa-home"></i><br>Inicio</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}"><i class="fa fa-tasks"></i><br>Acerca de Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}"><i class="fa fa-user"></i><br>Inicia sesión</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}"><i class="fa fa-envelope"></i><br>Contacto</a>
+                    </li>
+                </ul>
+            </div>
         </div>
       </div>
     </nav>
@@ -367,10 +360,6 @@
             </div>
           </div>
           <div class="col-sm-3 footer-box wow fadeInUp">
-            <h4>Fotos</h4>
-            <div class="footer-box-text flickr-feed"></div>
-          </div>
-          <div class="col-sm-3 footer-box wow fadeInDown">
             <h4>Contactos</h4>
             <div class="footer-box-text footer-box-text-contact">
               <p>
@@ -407,6 +396,8 @@
         </div>
       </div>
     </footer>
+
+
     <!-- Javascript -->
     <script src="{% static 'assets/js/jquery-1.11.1.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
