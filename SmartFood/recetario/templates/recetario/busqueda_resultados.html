@@ -29,6 +29,7 @@
             color: #333;
         }
 
+<<<<<<< HEAD
         header {
             background-color: #4caf50;
             color: #fff;
@@ -151,6 +152,36 @@
                     <th>Lípidos Totales</th>
                     <th>Proteína</th>
                     <th>Acciones</th>
+=======
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre del Alimento</th>
+                <th>Código Mex2</th>
+                <th>Energía (kcal)</th>
+                <th>Carbohidratos</th>
+                <th>Lípidos Totales</th>
+                <th>Proteína</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alimento in resultados %}
+                <tr>
+                    <td>{{ alimento.id }}</td>
+                    <td>{{ alimento.nombre_del_alimento }}</td>
+                    <td>{{ alimento.codigomex2 }}</td>
+                    <td>{{ alimento.energ_kcal }}</td>
+                    <td>{{ alimento.carbohydrt }}</td>
+                    <td>{{ alimento.lipid_tot }}</td>
+                    <td>{{ alimento.protein }}</td>
+                    <td>
+                        <!-- Agrega aquí tus botones de acciones, por ejemplo: -->
+                        <button >Editar</button>
+                        <button >Eliminar</button>
+                    </td>
+>>>>>>> origin/master
                 </tr>
             </thead>
             <tbody>
