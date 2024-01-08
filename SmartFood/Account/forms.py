@@ -1,4 +1,5 @@
 from django import forms
+from django.conf import settings
 from .models import CustomUser
 
 
@@ -17,7 +18,7 @@ class UserRegistrationForm(forms.ModelForm):
         model = CustomUser
         fields = ['username', 'first_name', 'email',
                   'edad', 'pesoActual', 'pesoObjetivo']
-
+    
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
