@@ -2,15 +2,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title %}Login{% endblock %}</title>
+        <title>{% block title %}Inicio de sesion{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
         <link rel="icon" href="{% static 'assets/ico/apple-touch-icon-57-precomposed.png' %}" type="png">
+        <style>
+        
+        </style>
     </head>
     <body>
         <div class="form-structor">
             <!-- Formulario de Registro -->
             <div class="signup">
-                <h2 class="form-title" id="signup"><span>or </span>Sign up</h2>
+                <h2 class="form-title" id="signup"><span></span>Regístrate</h2>
                 <div class="form-holder">
                     <form method="post" action="{% url 'register' %}">
                         {% csrf_token %}
@@ -19,28 +22,29 @@
                         {{ form.password }}
                         <div class="form-error">{{ form.username.errors }}</div>
                         <!-- Campos de UserRegistrationForm -->
-                        <input type="text" name="username" class="input" placeholder="Username" value="{{ form.username.value|default_if_none:'' }}" />
-                        <input type="text" name="first_name" class="input" placeholder="First Name" value="{{ form.first_name.value|default_if_none:'' }}" />
+                        <input type="text" name="username" class="input" placeholder="Primer Nombre" value="{{ form.username.value|default_if_none:'' }}" />
+                        <input type="text" name="first_name" class="input" placeholder="Apellido Paterno" value="{{ form.first_name.value|default_if_none:'' }}" />
                         <input type="email" name="email" class="input" placeholder="Email" value="{{ form.email.value|default_if_none:'' }}" />
-                        <input type="password" name="password" class="input" placeholder="Password" value="{{ form.password.value|default_if_none:''}}"/>
-                        <input type="password" name="password2" class="input" placeholder="Repeat Password" value="{{ form.password2.value|default_if_none:''}}"/>
+                        <input type="password" name="password" class="input" placeholder="Contraseña" value="{{ form.password.value|default_if_none:''}}"/>
+                        <input type="password" name="password2" class="input" placeholder="Verificar Contraseña" value="{{ form.password2.value|default_if_none:''}}"/>
                         <input type="number" name="edad" class="input" placeholder="Edad" value="{{ form.edad.value|default_if_none:'' }}" />
                         <input type="number" name="pesoActual" class="input" placeholder="Peso Actual" value="{{ form.pesoActual.value|default_if_none:'' }}" />
                         <input type="number" name="pesoObjetivo" class="input" placeholder="Peso Objetivo" value="{{ form.pesoObjetivo.value|default_if_none:'' }}" />
-                        <button type="submit" class="submit-btn">Sign up</button>
+                        <button type="submit" class="submit-btn">Regístrate</button>
                     </form>
                 </div>
             </div>
+            <br>
             <!-- Formulario de Inicio de Sesión -->
             <div class="login slide-up">
               <div class="center">
-                  <h2 class="form-title" id="login"><span>or </span>Log in</h2>
+                  <h2 class="form-title" id="login"><span>o </span>Inicia sesión</h2>
                   <div class="form-holder">
                       <form method="post">
                           {% csrf_token %}
-                          <input type="text" name="Nombre" class="input" placeholder="Username" value="{{ form.Nombre.value|default_if_none:'' }}" required/>
+                          <input type="text" name="Nombre" class="input" placeholder="Primer Nombre" value="{{ form.Nombre.value|default_if_none:'' }}" required/>
                           <input type="password" name="Contrasena" class="input" placeholder="Contrasena" value="{{form.Contrasena.value|default_if_none:''}}" required/>
-                          <button type="submit" class="submit-btn">Log in</button>
+                          <button type="submit" class="submit-btn">Inicia sesión</button>
                       </form>
                   </div>
               </div>

@@ -18,8 +18,82 @@
     <link rel="stylesheet" href="{% static 'assets/css/form-elements.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/media-queries.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/t_sty.css' %}">
-   
+    <link rel="stylesheet" href="{% static 'assets/css/t_sty.css.css' %}">
+    
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            border-radius: 8px;
+            max-width: 700px;
+            margin: 0 auto; 
+        }
+
+        main {
+            max-width: auto;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .styled-table th, .styled-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .styled-table th {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .recipe {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .recipe img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .recipe h3 {
+            color: #4caf50;
+        }
+
+        .recipe p {
+            color: #555;
+        }
+
+        .calories {
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
     <!-- Favicon and touch icons -->
     <link rel="icon" href="{% static 'assets/ico/apple-touch-icon-57-precomposed.png' %}" type="png">
 
@@ -58,13 +132,14 @@
         </div>
     </nav>
 
+    <br>
     <header>
-        <h1>Recetas Saludables</h1>
+        <h1>Resultados de la búsqueda</h1>
     </header>
 
     <main>
-        <h2>Resultados de la búsqueda</h2>
-        <p>Termino de búsqueda: {{ termino_busqueda }}</p>
+      
+        <h3>Termino de búsqueda: {{ termino_busqueda }}</h3>
 
         <table class="styled-table">
             <thead>
@@ -99,82 +174,99 @@
     </main>
 
           
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 footer-box wow fadeInUp">
-                    <h4>Sobre Nosotros</h4>
-                    <div class="footer-box-text">
-                        <p>
-                            Smart Food es la aplicación líder para realizar un seguimiento y conquistar sus objetivos de
-                            nutrición
-                            y acondicionamiento físico. Registre comidas de una base de datos de 14 millones de
-                            alimentos,
-                            realice un seguimiento de la actividad física y aprenda cómo desarrollar hábitos saludables
-                            que se mantengan.
-                        </p>
-
-                    </div>
-                </div>
-                <div class="col-sm-3 footer-box wow fadeInDown">
-                    <h4>Actualizaciones</h4>
-                    <div class="footer-box-text footer-box-text-subscribe">
-                        <p>Ingresa tu correo electrónico y serás uno de los primeros en recibir nuevas actualizaciones:
-                        </p>
-                        <form role="form" method="post" id="subscribeForm">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <label class="sr-only" for="subscribe-email">Correo electrónico</label>
-                                <input type="email" name="email" placeholder="Correo electrónico..."
-                                    class="subscribe-email" id="subscribe-email">
-                            </div>
-                            <button type="submit" class="btn" onclick="clearEmailField()">Suscribite</button>
-                        </form>
-                        <p class="success-message"></p>
-                        <p class="error-message"></p>
-
-                        <script>
-                            function clearEmailField() {
-                                // Seleccionar el campo de correo electrónico y limpiar su contenido
-                                document.getElementById('subscribe-email').value = '';
-                            }
-                        </script>
-                    </div>
-                </div>
-                <div class="col-sm-3 footer-box wow fadeInUp">
-                    <h4>Fotos</h4>
-                    <div class="footer-box-text flickr-feed"></div>
-                </div>
-                <div class="col-sm-3 footer-box wow fadeInDown">
-                    <h4>Contactos</h4>
-                    <div class="footer-box-text footer-box-text-contact">
-                        <p><i class="fa fa-map-marker"></i> Dirección: ESCOM IPN, Unidad Profesional Adolfo López
-                            Mateos, Av. Juan de Dios Bátiz, Nueva Industrial Vallejo, Gustavo A. Madero, 07320 Ciudad de
-                            México, CDMX</p>
-                        <p><i class="fa fa-phone"></i> Numero telefonico: +52 5543 1234 68 </p>
-                        <p><i class="fa fa-envelope"></i> Email: <a href="">smarto_food@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 wow fadeIn">
-                    <div class="footer-border"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-7 footer-copyright wow fadeIn">
-                    <p>Copyright 2023 </p>
-                </div>
-                <div class="col-sm-5 footer-social wow fadeIn">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                </div>
-            </div>
+   <!-- Footer -->
+   <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 footer-box wow fadeInUp">
+          <h4>Sobre Nosotros</h4>
+          <div class="footer-box-text">
+            <p>
+              Smart Food es la aplicación líder para realizar un seguimiento y
+              conquistar sus objetivos de nutrición y acondicionamiento
+              físico. Registre comidas de una base de datos de 14 millones de
+              alimentos, realice un seguimiento de la actividad física y
+              aprenda cómo desarrollar hábitos saludables que se mantengan.
+            </p>
+          </div>
         </div>
-    </footer>
+        <div class="col-sm-3 footer-box wow fadeInDown">
+          <h4>Actualizaciones</h4>
+          <div class="footer-box-text footer-box-text-subscribe">
+            <p>
+              Ingresa tu correo electrónico y serás uno de los primeros en
+              recibir nuevas actualizaciones:
+            </p>
+            <form role="form" method="post" id="subscribeForm">
+              {% csrf_token %}
+              <div class="form-group">
+                <label class="sr-only" for="subscribe-email"
+                  >Correo electrónico</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Correo electrónico..."
+                  class="subscribe-email"
+                  id="subscribe-email"
+                />
+              </div>
+              <button type="submit" class="btn" onclick="clearEmailField()">
+                Suscribite
+              </button>
+            </form>
+            <p class="success-message"></p>
+            <p class="error-message"></p>
+
+            <script>
+              function clearEmailField() {
+                // Seleccionar el campo de correo electrónico y limpiar su contenido
+                document.getElementById("subscribe-email").value = "";
+              }
+            </script>
+          </div>
+        </div>
+        <div class="col-sm-3 footer-box wow fadeInUp">
+          <h4>Fotos</h4>
+          <div class="footer-box-text flickr-feed"></div>
+        </div>
+        <div class="col-sm-3 footer-box wow fadeInDown">
+          <h4>Contactos</h4>
+          <div class="footer-box-text footer-box-text-contact">
+            <p>
+              <i class="fa fa-map-marker"></i> Dirección: ESCOM IPN, Unidad
+              Profesional Adolfo López Mateos, Av. Juan de Dios Bátiz, Nueva
+              Industrial Vallejo, Gustavo A. Madero, 07320 Ciudad de México,
+              CDMX
+            </p>
+            <p>
+              <i class="fa fa-phone"></i> Numero telefonico: +52 5543 1234 68
+            </p>
+            <p>
+              <i class="fa fa-envelope"></i> Email:
+              <a href="">smarto_food@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 wow fadeIn">
+          <div class="footer-border"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-7 footer-copyright wow fadeIn">
+          <p>Copyright 2023</p>
+        </div>
+        <div class="col-sm-5 footer-social wow fadeIn">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-pinterest"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 </body>
