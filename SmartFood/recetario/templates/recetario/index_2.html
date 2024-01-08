@@ -64,37 +64,37 @@
         </div>
     </nav>
 
-    </nav>
 
     <br><br><br><br><br><br>
-    <!-- Comsumo -->
-    <div id="container">
-        <div id="goal-display">Meta de calorías: 0</div>
-        <div id="progress-bar-container">
-            <div id="progress-bar">0%</div>
-        </div>
-
-        <div id="controls">
-            <div>
-                <label for="goal-input">Meta de calorías:</label>
-                <input type="number" id="goal-input" placeholder="Meta" />
+        <!-- Comsumo -->
+        <div id="container">
+            <div id="goal-display">Meta de calorías: 0</div>
+            <div id="progress-bar-container">
+                <div id="progress-bar">0%</div>
             </div>
-            <div>
-                <label for="consume-input">Calorías consumidas:</label>
-                <input type="number" id="consume-input" placeholder="Calorías" />
-            </div>
-            <button onclick="showMealPlan()">Plan Alimentario</button>
-            <button onclick="consumeCalories()">Registrar Consumo</button>
-            <button onclick="registerFood()">Registrar Alimento</button>
-        </div>
-        <br><br><br><br><br><br>
-        <form method="get" action="{% url 'buscar' %}">
-            <input type="text" name="termino_busqueda" placeholder="Buscar...">
-            <button type="submit">Buscar</button>
-        </form>
         
-
-
+            <div id="controls">
+                <div>
+                    <label for="goal-input">Meta de calorías:</label>
+                    <input type="number" id="goal-input" placeholder="Meta" />
+                </div>
+                <div>
+                    <label for="consume-input">Calorías consumidas:</label>
+                    <input type="number" id="consume-input" placeholder="Calorías" />
+                </div>
+                <button onclick="showMealPlan()">Plan Alimentario</button>
+                <button onclick="consumeCalories()">Registrar Consumo</button>
+                <button onclick="registerFood()">Registrar Alimento</button>
+            </div>
+        
+            <div id="result">Consumido hoy: 0 calorías</div>
+            <br>
+            <form method="get" action="{% url 'buscar' %}">
+                <input type="text" name="termino_busqueda" placeholder="Buscar...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        
     <!-- Footer -->
     <footer>
         <div class="container">
