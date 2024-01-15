@@ -6,16 +6,30 @@ from .models import Alimento2
 def recetario_view(request):
     return render(request, 'recetario/index_2.html')
 
+from django.shortcuts import render
+from django.db.models import Q
+from .models import Alimento2
+
 def buscar(request):
     termino_busqueda = request.GET.get('termino_busqueda', '')
+    username_value = None
+
+    if request.user.is_authenticated:
+        # Accede al nombre de usuario del usuario autenticado
+        username_value = request.user.username
 
     if termino_busqueda:
-        # Realizar la búsqueda utilizando Q objects para hacer consultas OR
         resultados = Alimento2.objects.filter(Q(nombre_del_alimento__icontains=termino_busqueda) | Q(codigomex2__icontains=termino_busqueda))
     else:
         resultados = Alimento2.objects.all()
 
-    return render(request, 'recetario/busqueda_resultados.html', {'resultados': resultados, 'termino_busqueda': termino_busqueda})
+    context = {
+        'resultados': resultados,
+        'termino_busqueda': termino_busqueda,
+        'username_value': username_value,
+    }
+
+    return render(request, 'recetario/busqueda_resultados.html', context) 
 
 import logging
 from django.http import JsonResponse
@@ -30,6 +44,7 @@ logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def guardarid(request):
+
     # Verifica si el usuario está autenticado
     if request.user.is_authenticated:
         # Accede al nombre de usuario del usuario autenticado

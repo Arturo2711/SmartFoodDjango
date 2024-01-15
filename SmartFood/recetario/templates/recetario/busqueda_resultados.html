@@ -138,7 +138,7 @@
     </header>
 
     <main>
-      
+        <h3>Nombre del Usuario: {{ username_value }}</h3>
         <h3>Termino de búsqueda: {{ termino_busqueda }}</h3>
 
         <table class="styled-table">
@@ -168,7 +168,7 @@
                           <td>{{ alimento.lipid_tot }}</td>
                           <td>{{ alimento.protein }}</td>
                           <td>
-                              <button class="editar-btn" data-id="{{ alimento.id }}">Editar</button>
+                              <button class="editar-btn" data-id="{{ alimento.id }}">Agregar</button>
                               <button class="eliminar-btn" data-id="{{ alimento.id }}">Eliminar</button>
                           </td>
                       </tr>
