@@ -64,7 +64,7 @@
         </div>
     </nav>
 
-    <h3>Nombre del Usuario: {{ username_value }}</h3>
+    
     <br><br><br><br><br><br>
         <!-- Comsumo -->
         <div id="container">
@@ -82,9 +82,11 @@
                     <label for="consume-input">Calorías consumidas:</label>
                     <input type="number" id="consume-input" placeholder="Calorías" />
                 </div>
-                <button onclick="showMealPlan()">Plan Alimentario</button>
+                <a href="https://drive.google.com/drive/folders/1Vz1fcPRBPlGC7m_iXFFrZRw978hSexTa?usp=sharing target="_blank">
+                    <button>Descargar la App</button>
+                </a>                
                 <button onclick="consumeCalories()">Registrar Consumo</button>
-                <button onclick="registerFood()">Registrar Alimento</button>
+                
             </div>
         
             <div id="result">Consumido hoy: 0 calorías</div>
