@@ -29,7 +29,6 @@
             color: #333;
         }
 
-<<<<<<< HEAD
         header {
             background-color: #4caf50;
             color: #fff;
@@ -157,28 +156,6 @@
             <tbody>
                 {% for alimento in resultados %}
                     <tr>
-=======
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre del Alimento</th>
-                <th>Código Mex2</th>
-                <th>Energía (kcal)</th>
-                <th>Carbohidratos</th>
-                <th>Lípidos Totales</th>
-                <th>Proteína</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        
-        <form method="post" class="form-group" id="login-form">
-            {% csrf_token %}
-            <tbody>
-                {% for alimento in resultados %}
-                    <tr>
-                        <td>{{ alimento.id }}</td>
->>>>>>> origin/Union2
                         <td>{{ alimento.nombre_del_alimento }}</td>
                         <td>{{ alimento.codigomex2 }}</td>
                         <td>{{ alimento.energ_kcal }}</td>
@@ -186,51 +163,15 @@
                         <td>{{ alimento.lipid_tot }}</td>
                         <td>{{ alimento.protein }}</td>
                         <td>
-<<<<<<< HEAD
                             <!-- Agrega aquí tus botones de acciones, por ejemplo: -->
                             <button >Editar</button>
                             <button >Eliminar</button>
-=======
-                            <button class="editar-btn" data-id="{{ alimento.id }}">Editar</button>
-                            <button class="eliminar-btn" data-id="{{ alimento.id }}">Eliminar</button>
->>>>>>> origin/Union2
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
-<<<<<<< HEAD
         </table>
     </main>
-=======
-        
-        </form>
-        
-         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-   $(document).ready(function() {
-      $('.editar-btn, .eliminar-btn').click(function() {
-         // Obtener el ID desde el atributo data-id del botón
-         var id = $(this).data('id');
-
-         // Guardar el ID en la sesión usando AJAX
-         $.ajax({
-            url: '{% url "guardarid" %}',  // Reemplaza con tu URL de Django
-            method: 'POST',
-            data: {'id': id},
-            success: function(response) {
-               // Manejar el éxito si es necesario
-            },
-            error: function(error) {
-               // Manejar el error si es necesario
-            }
-         });
-      });
-   });
-</script>
-
-    </table>
-{% endblock %}
->>>>>>> origin/Union2
 
           
    <!-- Footer -->
