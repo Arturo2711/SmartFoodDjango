@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.shortcuts import render
 from . import forms
 from django.contrib.auth import authenticate, login
@@ -16,12 +16,12 @@ def user_login(request):
             cd = form.cleaned_data
             # Autenticamos el usuario en los usuarios en la base de datos
             user = authenticate(request,
-                                username=cd['username'],
-                                password=cd['password'])
+                                username=cd['Nombre'],
+                                password=cd['Contrasena'])
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return render(request, 'account/logged_in.html')
+                    return redirect('recetario')
                 else:
                     return HttpResponse('Disabled account')
         else:
@@ -51,3 +51,4 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'account/register.html', {'user_form': user_form})
+

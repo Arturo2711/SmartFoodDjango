@@ -3,7 +3,7 @@
 <html>
   <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/register.css' %}" />
   </head>
   <body>
     <div>
@@ -11,7 +11,7 @@
       <form method="post" class="form-group">
         {{ user_form.as_p }} {% csrf_token %}
         <p>
-          <input type="submit" value="Log in" class="btn btn-primary" />
+          <input type="submit" value="Sign up" class="btn btn-primary" />
         </p>
       </form>
     </div>

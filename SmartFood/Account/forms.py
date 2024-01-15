@@ -1,10 +1,11 @@
 from django import forms
+from django.conf import settings
 from .models import CustomUser
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=20)
-    password = forms.CharField(widget=forms.PasswordInput)
+    Nombre = forms.CharField(max_length=20)
+    Contrasena = forms.CharField(widget=forms.PasswordInput)
 
 
 class UserRegistrationForm(forms.ModelForm):
@@ -17,7 +18,7 @@ class UserRegistrationForm(forms.ModelForm):
         model = CustomUser
         fields = ['username', 'first_name', 'email',
                   'edad', 'pesoActual', 'pesoObjetivo']
-
+    
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
