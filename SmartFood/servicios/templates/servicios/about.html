@@ -29,8 +29,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Favicon and touch icons -->
-    <link rel="icon" href="{% static 'assets/ico/apple-touch-icon-144-precomposed.png' %}" type="png">
+    <link
+      rel="icon"
+      href="{% static 'assets/ico/apple-touch-icon-57-precomposed.png' %}"
+      type="png"
+    />
 </head>
 
 <body>
@@ -48,14 +51,14 @@
                 </button>
                 <a class="navbar-brand" href="{% url 'index' %}">Smart Food</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="top-navbar-1">
+             <!-- Collect the nav links, forms, and other content for toggling -->
+             <div class="collapse navbar-collapse" id="top-navbar-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="{% url 'index' %}"><i class="fa fa-home"></i><br>Inicio</a>
                     </li>
                     <li>
-                        <a href="{% url 'services' %}"><i class="fa fa-tasks"></i><br>Servicios</a>
+                        <a href="{% url 'about' %}"><i class="fa fa-tasks"></i><br>Acerca de Nosotros</a>
                     </li>
                     <li>
                         <a href="{% url 'login' %}"><i class="fa fa-user"></i><br>Inicia sesión</a>
@@ -69,13 +72,14 @@
     </nav>
 
 
-    <!-- Page Title -->
-    <div class="page-title-container">
+      <!-- Page Title -->
+      <div class="page-title-container">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 wow fadeIn">
-                    <i class="fa fa-user"></i>
+                    <i class="fa fa-tasks"></i>
                     <h1>Acerca de Nosotros /</h1>
+                    <br>
                     <p>Abajo podrá encontrar más información sobre nuestra aplicación</p>
                 </div>
             </div>
@@ -136,8 +140,9 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="team-box wow fadeInUp">
-                        <img src="{% static 'assets/img/team/1.jpg' %}" alt=""
-                            data-at2x="{% static 'assets/img/team/1.jpg' %}">
+                        <img src="{% static 'assets/img/team/1.jpeg' %}" alt=""
+                            width="250" height="284"
+                            data-at2x="{% static 'assets/img/team/1.jpeg' %}">
                         <h3>Eduardo Munoz</h3>
                         <p>Estudiante de 4to semestre en el IPN</p>
                         <div class="team-social">
@@ -150,8 +155,9 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="team-box wow fadeInDown">
-                        <img src="{% static 'assets/img/team/2.jpg' %}" alt=""
-                            data-at2x="{% static 'assets/img/team/2.jpg' %}">
+                        <img src="{% static 'assets/img/team/Yo.jpeg' %}" alt=""
+                            width="250" height="284"
+                            data-at2x="{% static 'assets/img/team/Yo.jpeg' %}">
                         <h3>Ahmed Cruz</h3>
                         <p>oa</p>
                         <div class="team-social">
@@ -164,8 +170,9 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="team-box wow fadeInUp">
-                        <img src="{% static 'assets/img/team/3.jpg' %}" alt=""
-                            data-at2x="{% static 'assets/img/team/3.jpg' %}">
+                        <img src="{% static 'assets/img/team/3.jpeg' %}"  alt=""
+                            width="250" height="284"
+                            data-at2x="{% static 'assets/img/team/3.jpeg' %}">
                         <h3>Arturo</h3>
                         <p>oa</p>
                         <div class="team-social">
@@ -178,8 +185,9 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="team-box wow fadeInDown">
-                        <img src="{% static 'assets/img/team/4.jpg' %}" alt=""
-                            data-at2x="{% static 'assets/img/team/4.jpg' %}">
+                        <img src="{% static 'assets/img/team/4.jpeg' %}" alt=""
+                            width="250" height="284"
+                            data-at2x="{% static 'assets/img/team/4.jpeg' %}">
                         <h3>Christian</h3>
                         <p>oa</p>
                         <div class="team-social">
@@ -192,8 +200,9 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="team-box wow fadeInUp">
-                        <img src="{% static 'assets/img/5.jpg' %}" alt=""
-                            data-at2x="{% static 'assets/img/team/5.jpg' %}">
+                        <img src="{% static 'assets/img/team/5.jpeg' %}" alt=""
+                            width="250" height="284"
+                            data-at2x="{% static 'assets/img/team/5.jpeg' %}">
                         <h3>Gerardo</h3>
                         <p>Un vato</p>
                         <div class="team-social">
@@ -335,10 +344,6 @@
                     </div>
                 </div>
                 <div class="col-sm-3 footer-box wow fadeInUp">
-                    <h4>Fotos</h4>
-                    <div class="footer-box-text flickr-feed"></div>
-                </div>
-                <div class="col-sm-3 footer-box wow fadeInDown">
                     <h4>Contactos</h4>
                     <div class="footer-box-text footer-box-text-contact">
                         <p><i class="fa fa-map-marker"></i> Dirección: ESCOM IPN, Unidad Profesional Adolfo López

@@ -16,20 +16,20 @@
                 <h2 class="form-title" id="signup"><span></span>Regístrate</h2>
                 <div class="form-holder">
                     <form method="post" action="{% url 'register' %}">
+                        {{ user_form.non_field_errors }}
+                        {{ user_form.username }}
+                        {{ user_form.password }}
                         {% csrf_token %}
-                        {{ form.non_field_errors }}
-                        {{ form.username }}
-                        {{ form.password }}
-                        <div class="form-error">{{ form.username.errors }}</div>
+                        <div class="form-error">{{ user_form.username.errors }}</div>
                         <!-- Campos de UserRegistrationForm -->
-                        <input type="text" name="username" class="input" placeholder="Primer Nombre" value="{{ form.username.value|default_if_none:'' }}" />
-                        <input type="text" name="first_name" class="input" placeholder="Apellido Paterno" value="{{ form.first_name.value|default_if_none:'' }}" />
-                        <input type="email" name="email" class="input" placeholder="Email" value="{{ form.email.value|default_if_none:'' }}" />
-                        <input type="password" name="password" class="input" placeholder="Contraseña" value="{{ form.password.value|default_if_none:''}}"/>
-                        <input type="password" name="password2" class="input" placeholder="Verificar Contraseña" value="{{ form.password2.value|default_if_none:''}}"/>
-                        <input type="number" name="edad" class="input" placeholder="Edad" value="{{ form.edad.value|default_if_none:'' }}" />
-                        <input type="number" name="pesoActual" class="input" placeholder="Peso Actual" value="{{ form.pesoActual.value|default_if_none:'' }}" />
-                        <input type="number" name="pesoObjetivo" class="input" placeholder="Peso Objetivo" value="{{ form.pesoObjetivo.value|default_if_none:'' }}" />
+                        <input type="text" name="username" class="input" placeholder="Primer Nombre" value="{{ user_form.username.value|default_if_none:'' }}" required />
+                        <input type="text" name="first_name" class="input" placeholder="Apellido Paterno" value="{{ user_form.first_name.value|default_if_none:'' }}"required />
+                        <input type="email" name="email" class="input" placeholder="Email" value="{{ user_form.email.value|default_if_none:'' }}" required/>
+                        <input type="password" name="password" class="input" placeholder="Contraseña" value="{{ user_form.password.value|default_if_none:''}}"required/>
+                        <input type="password" name="password2" class="input" placeholder="Verificar Contraseña" value="{{ user_form.password2.value|default_if_none:''}}"required/>
+                        <input type="number" name="edad" class="input" placeholder="Edad" value="{{ user_form.edad.value|default_if_none:'' }}" required/>
+                        <input type="number" name="pesoActual" class="input" placeholder="Peso Actual" value="{{ user_form.pesoActual.value|default_if_none:'' }}" required/>
+                        <input type="number" name="pesoObjetivo" class="input" placeholder="Peso Objetivo" value="{{ user_form.pesoObjetivo.value|default_if_none:'' }}" />
                         <button type="submit" class="submit-btn">Regístrate</button>
                     </form>
                 </div>
